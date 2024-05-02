@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from '../src/App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <react.strictmode>
-    <app>
-  </app></react.strictmode>
+    <App>
+  </App></react.strictmode>
 );
