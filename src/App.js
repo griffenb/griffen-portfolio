@@ -1,25 +1,18 @@
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
+import profilePic from "./components/Profile Pic Group.svg"; // Corrected import path
+import fallenStarHome from "./components/Fallen Star Home Frame.svg";
 
 function App() {
   return (
     <div className="App">
       <div className="img-overlay-wrap">
-        <img src="/home/prof.png"></img>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="122"
-          height="122"
-          viewBox="0 0 122 122"
-          fill="none"
-        >
-          <circle cx="61" cy="61" r="61" fill="#F2F5CE" />
-        </svg>{" "}
+        <img src={profilePic} alt="Profile" className="profile-img" />
       </div>
       <div className="name">Griffen Bengard</div>
       <div className="sub">UX Design</div>
       <div className="fallen">
-        <img src="/home/fallen-star/fs.png"></img>
+        <img src={fallenStarHome} alt="Fallen Star Home" className="fallen" />
       </div>
     </div>
   );
