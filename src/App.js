@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
-import profilePic from "./components/Profile Pic Group.svg"; // Corrected import path
-import fallenStarHome from "./components/Fallen Star Home Frame.svg";
+import profilePic from "./assets/Profile Pic Group.svg"; // Corrected import path
+import fallenStarHome from "./assets/Fallen Star Home Frame.svg";
+//import cloudGroup from "./components/Cloud Group.svg";
 
 function App() {
   return (
