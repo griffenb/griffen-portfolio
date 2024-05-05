@@ -1,3 +1,11 @@
+.profile-img {
+  position: absolute;
+  width: 78px; /* Adjust as needed */
+  height: auto;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
 .img-overlay-wrap {
   position: relative;
   display: inline-block; /* <= shrinks container to image size */
@@ -7,6 +15,16 @@
   flex-shrink: 0;
   padding-left: 67px;
   padding-top: 49px;
+}
+
+.clouds {
+  position: absolute;
+  display: inline-block;
+  transition: transform 150ms ease-in-out;
+  width: 1032px;
+  padding-top: 200px;
+  padding-left: 250px;
+  z-index: -1;
 }
 
 .img-overlay-wrap svg {
@@ -28,59 +46,25 @@
 .name {
   color: #465fc8;
   font-family: "Andika";
-  font-size: 80px;
+  font-size: 70px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  padding-left: 121px;
-  padding-top: 80px;
-}
-
-.fallen {
-  padding-left: 400px;
+  padding-left: 71px;
+  padding-top: 125px;
 }
 
 .sub {
   color: #5a6695;
   font-family: "Andika";
-  font-size: 50px;
+  font-size: 40px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  padding-left: 121px;
+  padding-left: 71px; /* Adjusted padding-left */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh; /* This property ensures the header takes up at least the full height of the viewport */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fallen {
+  display: inline-block;
+  padding-left: 350px;
 }
