@@ -1,3 +1,5 @@
+/* Add these styles to your CSS file */
+
 .profile-img {
   position: absolute;
   width: 78px; /* Adjust as needed */
@@ -6,41 +8,28 @@
   padding-top: 10px;
 }
 
-.img-overlay-wrap {
-  position: relative;
-  display: inline-block; /* <= shrinks container to image size */
-  transition: transform 150ms ease-in-out;
-  width: 122px;
-  height: 122px;
-  flex-shrink: 0;
-  padding-left: 67px;
-  padding-top: 49px;
-}
-
 .clouds {
   position: absolute;
   display: inline-block;
-  transition: transform 150ms ease-in-out;
   width: 1032px;
-  padding-top: 200px;
-  padding-left: 250px;
+  padding-top: 160px;
+  padding-left: 150px;
   z-index: -1;
 }
 
-.img-overlay-wrap svg {
-  /* <= optional, for responsiveness */
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-.img-overlay-wrap img {
-  padding-left: 75px;
-  padding-top: 55px;
+.cloud-image,
+.cloud-gif {
+  padding-top: 160px;
+  padding-left: 350px;
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: 60px;
+  width: 100%;
+  height: auto;
+}
+
+.cloud-gif {
+  display: none;
 }
 
 .name {
@@ -67,4 +56,13 @@
 .fallen {
   display: inline-block;
   padding-left: 350px;
+}
+
+/* New styles for clouds and overlay */
+.cloud-image {
+  z-index: 1;
+}
+
+.cloud-gif {
+  z-index: 2;
 }
