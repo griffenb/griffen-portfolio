@@ -20,7 +20,7 @@
 .cloud-image,
 .cloud-gif {
   padding-top: 160px;
-  padding-left: 350px;
+  padding-left: 150px; /* Adjusted padding-left */
   position: absolute;
   top: 0;
   left: 0;
@@ -57,12 +57,29 @@
   display: inline-block;
   padding-left: 350px;
 }
-
-/* New styles for clouds and overlay */
-.cloud-image {
-  z-index: 1;
+.image-container {
+  position: relative;
 }
 
-.cloud-gif {
-  z-index: 2;
+.base-image {
+  position: relative;
+  padding-left: 400px;
+  z-index: 1; /* Ensure the base image is below overlay */
+}
+
+.overlay-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Ensure overlay images are above base image */
+}
+
+.overlay-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

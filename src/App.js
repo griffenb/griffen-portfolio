@@ -18,26 +18,50 @@ function App() {
       </div>
 
       <div className="clouds">
-        <gif
-          autoPlay
-          loop
-          muted
-          className="clouds-image"
-          onMouseEnter={() => setCloudsHovered(true)}
-          onMouseLeave={() => setCloudsHovered(false)}
-        >
-          <source src={CloudsGroupGif} type="gif" />
-        </gif>
+        {!isHovered && (
+          <img
+            src={cloudGroup}
+            alt="Cloud Group"
+            className="clouds-image"
+            onMouseEnter={() => setCloudsHovered(true)}
+            onMouseLeave={() => setCloudsHovered(false)}
+          />
+        )}
       </div>
       <div className="name">Griffen Bengard</div>
       <div className="sub">UX Design</div>
-      <img
-        src={isHovered ? fallenStarHover : fallenStarHome}
-        alt="Fallen Star Home"
-        className="fallen"
+      <div
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-      />
+        className="image-container"
+      >
+        {/* Base Image */}
+        <img
+          src={fallenStarHome}
+          alt="Fallen Star Home"
+          className="base-image"
+        />
+
+        {/* Overlay Images */}
+        {isHovered && (
+          <div className="overlay-images">
+            {CloudsGroupGif && (
+              <img
+                src={CloudsGroupGif}
+                alt="Clouds Group Gif"
+                className="clouds-group-gif overlay-image"
+              />
+            )}
+            {fallenStarHover && (
+              <img
+                src={fallenStarHover}
+                alt="Fallen Star Hover"
+                className="fallen-star-hover overlay-image"
+              />
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
