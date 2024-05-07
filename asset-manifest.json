@@ -1,17 +1,21 @@
 {
   "files": {
-    "main.css": "/griffen-portfolio/static/css/main.033b6dcc.css",
-    "main.js": "/griffen-portfolio/static/js/main.bf31bf91.js",
+    "main.css": "/griffen-portfolio/static/css/main.a1da4434.css",
+    "main.js": "/griffen-portfolio/static/js/main.44833060.js",
     "static/js/453.7ee4d7b8.chunk.js": "/griffen-portfolio/static/js/453.7ee4d7b8.chunk.js",
-    "static/media/Profile Pic Group.svg": "/griffen-portfolio/static/media/Profile Pic Group.f5d7a21db0bc138b3783e52b2662e42b.svg",
-    "static/media/Fallen Star Home Frame.svg": "/griffen-portfolio/static/media/Fallen Star Home Frame.2216a41c91ffdf85fa250b0a24980c54.svg",
+    "static/media/Profile Pic Group.svg": "/griffen-portfolio/static/media/Profile Pic Group.08765bcc37ccde8f5a2b35c7d72dd1e2.svg",
+    "static/media/Fallen Star Hover Page.svg": "/griffen-portfolio/static/media/Fallen Star Hover Page.53bfb058b34409020a1f4de1e33c451e.svg",
+    "static/media/Fallen Star Home Frame.svg": "/griffen-portfolio/static/media/Fallen Star Home Frame.0b13dc441797ddb415f7b02922508e77.svg",
+    "static/media/Clouds Group Gif.gif": "/griffen-portfolio/static/media/Clouds Group Gif.5d875bcde1078284084c.gif",
+    "static/media/Clouds Group Video.mp4": "/griffen-portfolio/static/media/Clouds Group Video.7bc9b8988c1741370a49.mp4",
+    "static/media/Cloud Group.svg": "/griffen-portfolio/static/media/Cloud Group.1a81a162b6865f779ae6b3aab64023c7.svg",
     "index.html": "/griffen-portfolio/index.html",
-    "main.033b6dcc.css.map": "/griffen-portfolio/static/css/main.033b6dcc.css.map",
-    "main.bf31bf91.js.map": "/griffen-portfolio/static/js/main.bf31bf91.js.map",
+    "main.a1da4434.css.map": "/griffen-portfolio/static/css/main.a1da4434.css.map",
+    "main.44833060.js.map": "/griffen-portfolio/static/js/main.44833060.js.map",
     "453.7ee4d7b8.chunk.js.map": "/griffen-portfolio/static/js/453.7ee4d7b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.033b6dcc.css",
-    "static/js/main.bf31bf91.js"
+    "static/css/main.a1da4434.css",
+    "static/js/main.44833060.js"
   ]
 }
