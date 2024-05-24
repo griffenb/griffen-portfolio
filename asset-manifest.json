@@ -1,21 +1,26 @@
 {
   "files": {
-    "main.css": "/griffen-portfolio/static/css/main.a1da4434.css",
-    "main.js": "/griffen-portfolio/static/js/main.44833060.js",
+    "main.css": "/griffen-portfolio/static/css/main.ca382afc.css",
+    "main.js": "/griffen-portfolio/static/js/main.b2d8d646.js",
     "static/js/453.7ee4d7b8.chunk.js": "/griffen-portfolio/static/js/453.7ee4d7b8.chunk.js",
-    "static/media/Profile Pic Group.svg": "/griffen-portfolio/static/media/Profile Pic Group.08765bcc37ccde8f5a2b35c7d72dd1e2.svg",
-    "static/media/Fallen Star Hover Page.svg": "/griffen-portfolio/static/media/Fallen Star Hover Page.53bfb058b34409020a1f4de1e33c451e.svg",
-    "static/media/Fallen Star Home Frame.svg": "/griffen-portfolio/static/media/Fallen Star Home Frame.0b13dc441797ddb415f7b02922508e77.svg",
-    "static/media/Clouds Group Gif.gif": "/griffen-portfolio/static/media/Clouds Group Gif.5d875bcde1078284084c.gif",
-    "static/media/Clouds Group Video.mp4": "/griffen-portfolio/static/media/Clouds Group Video.7bc9b8988c1741370a49.mp4",
-    "static/media/Cloud Group.svg": "/griffen-portfolio/static/media/Cloud Group.1a81a162b6865f779ae6b3aab64023c7.svg",
+    "static/media/profile.svg": "/griffen-portfolio/static/media/profile.7f961a8acaa908b6f9ef138c65da3921.svg",
+    "static/media/risen-hover.gif": "/griffen-portfolio/static/media/risen-hover.a873a4b3aa244ae81584.gif",
+    "static/media/fallen-hover.svg": "/griffen-portfolio/static/media/fallen-hover.b625ba4f38524bd27f449f8f8d299d38.svg",
+    "static/media/fallen-star.svg": "/griffen-portfolio/static/media/fallen-star.b6dfe3efdf91d3bd89b253f049c75c15.svg",
+    "static/media/clouds-fallen.gif": "/griffen-portfolio/static/media/clouds-fallen.5d875bcde1078284084c.gif",
+    "static/media/arlo-hover.gif": "/griffen-portfolio/static/media/arlo-hover.b76405b5bb94dcc51f8f.gif",
+    "static/media/risen.svg": "/griffen-portfolio/static/media/risen.c1649f52f757dea16705e601edf23d21.svg",
+    "static/media/arlo.svg": "/griffen-portfolio/static/media/arlo.2433a9e5977b0595258158f88191efca.svg",
+    "static/media/linkedin.svg": "/griffen-portfolio/static/media/linkedin.fd24d68de80a84df9f0106f54cf839a7.svg",
     "index.html": "/griffen-portfolio/index.html",
-    "main.a1da4434.css.map": "/griffen-portfolio/static/css/main.a1da4434.css.map",
-    "main.44833060.js.map": "/griffen-portfolio/static/js/main.44833060.js.map",
+    "static/media/email.svg": "/griffen-portfolio/static/media/email.bb02a09969bf2f9f3cf2550346cdd01a.svg",
+    "static/media/options.svg": "/griffen-portfolio/static/media/options.449d61c49cde09ef943499dc4db5893c.svg",
+    "main.ca382afc.css.map": "/griffen-portfolio/static/css/main.ca382afc.css.map",
+    "main.b2d8d646.js.map": "/griffen-portfolio/static/js/main.b2d8d646.js.map",
     "453.7ee4d7b8.chunk.js.map": "/griffen-portfolio/static/js/453.7ee4d7b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a1da4434.css",
-    "static/js/main.44833060.js"
+    "static/css/main.ca382afc.css",
+    "static/js/main.b2d8d646.js"
   ]
 }
