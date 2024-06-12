@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Home from "./components/home/Home.js";
+
 // import profilePic from "./assets/Profile Pic Group.svg";
 // import fallenStarHome from "./assets/Fallen Star Home Frame.svg";
 // import fallenStarHover from "./assets/Fallen Star Hover Page.svg";

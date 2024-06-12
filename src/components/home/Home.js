@@ -8,6 +8,7 @@ import Projects from "./Projects.js";
 const HomeContainer = styled.div`
   background: linear-gradient(0deg, #f2f5ce 0%, #f2f5ce 100%);
   width: 100vw;
+  overflow-x: hidden; // Add this to ensure no horizontal scroll
 
   height: 120vh;
 `;
@@ -18,33 +19,37 @@ const MenuContainer = styled.div`
 
 const ProfPic = styled.img`
   position: absolute;
-  height: auto;
+  height: 20%;
   width: auto;
   padding: 43px 0 0 60px;
 `;
-
 const About = styled.div`
-  padding: 210px 0 0 126px;
+  padding: 150px 0 0 126px;
+  overflow-x: hidden; // Prevent horizontal overflow
 `;
 
 const Name = styled.div`
   color: #465fc8;
   font-family: "Andika";
-  font-size: 108px;
+  font-size: 92px;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
   letter-spacing: 5px;
+  padding-right: 0; // Ensure no excessive padding
+  margin-right: 0; // Ensure no excessive margin
 `;
 
 const Subtitle = styled.div`
   color: #5a6695;
   font-family: "Andika";
-  font-size: 64px;
+  font-size: 52px;
   margin-top: -7px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  padding-right: 0; // Ensure no excessive padding
+  margin-right: 0; // Ensure no excessive margin
 `;
 
 const Home = () => {
