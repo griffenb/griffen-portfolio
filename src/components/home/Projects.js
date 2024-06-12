@@ -74,16 +74,10 @@ const ProjectContainer = ({ src, hoverSrc, overlaySrc, alt, index }) => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         />
-        {isHovered ? (
+        {isHovered && overlaySrc && (
           <Hover
             key={index}
             src={overlaySrc}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          />
-        ) : (
-          <Empty
-            key={index}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           />
@@ -95,7 +89,7 @@ const ProjectContainer = ({ src, hoverSrc, overlaySrc, alt, index }) => {
 
 const Projects = () => {
   return (
-    <ImageGallery className="place-content-evenly place-content-stretch">
+    <ImageGallery className="place-content-stretch">
       {projects.map((project, index) => (
         <ProjectContainer {...project} key={index} />
       ))}
