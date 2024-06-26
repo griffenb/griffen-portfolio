@@ -7,9 +7,8 @@ import Projects from "./Projects.js";
 
 const HomeContainer = styled.div`
   background: linear-gradient(0deg, #f2f5ce 0%, #f2f5ce 100%);
-  width: 100vw;
   overflow-x: hidden; // Add this to ensure no horizontal scroll
-
+  width: auto;
   height: 120vh;
 `;
 
