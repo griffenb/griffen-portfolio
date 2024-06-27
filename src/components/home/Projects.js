@@ -10,20 +10,7 @@ import risen from "../../assets/home/projects/risen.svg";
 import risenHover from "../../assets/home/projects/risen-hover.gif";
 import shoply from "../../assets/home/projects/Shoply Group.svg";
 import shoplyHover from "../../assets/home/projects/shoply-hover.gif";
-import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Arial', sans-serif; // Example font
-    overflow-x: hidden; // Prevent horizontal scrolling at the body level
-  }
-`;
 const ImageGallery = styled.div`
   display: flex;
   padding: 30px 0 0 0;
@@ -34,11 +21,6 @@ const ImageGallery = styled.div`
   overflow-x: hidden; // Hide any overflow on the x-axis
 `;
 
-//const ImageContainer = styled.div`
-//  width: auto;
-//  height: auto;
-//  display: block;
-//`;
 const ImageContainer = styled.div`
   width: 100%; // Take full width of PaddingDiv
   height: 100%; // Take full height of PaddingDiv
@@ -48,10 +30,6 @@ const ImageContainer = styled.div`
   position: relative; // Needed for absolute positioning of children
 `;
 
-// TODO 25%
-//const PaddingDiv = styled.div`
-//  width: 25%;
-//`;
 const PaddingDiv = styled.div`
   width: 25%;
   height: 45vh; // Example height, adjust as needed
@@ -59,13 +37,7 @@ const PaddingDiv = styled.div`
   justify-content: center;
   align-items: center;
 `;
-//const Project = styled.img`
-//  width: 25%;
-//  height: auto;
-//  display: flex;
-//  position: absolute;
-//  z-index: 2;
-//`;
+
 const Project = styled.img`
   width: ${({ isGif }) => (isGif ? "350px" : "350px")};
   height: ${({ isGif }) => (isGif ? "250px" : "250px")};
@@ -78,14 +50,6 @@ const Project = styled.img`
   z-index: 2;
 `;
 
-//const Hover = styled.img`
-//  width: 460px;
-//  height: 300px;
-//  z-index: 3;
-//  display: flex;
-//  position: absolute;
-//  blob: ;
-//`;
 const Hover = styled.img`
   width: 460px;
   height: 300px;
@@ -95,14 +59,6 @@ const Hover = styled.img`
   transform: translate(-50%, -50%); // Center the image
   z-index: 3;
   display: flex;
-`;
-
-const Empty = styled.div`
-  width: auto;
-  height: auto;
-  z-index: 3;
-  display: flex;
-  position: absolute;
 `;
 
 const projects = [

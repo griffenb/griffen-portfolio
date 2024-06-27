@@ -30,7 +30,7 @@ const About = styled.div`
 const Name = styled.div`
   color: #465fc8;
   font-family: "Andika";
-  font-size: 92px;
+  font-size: calc(20px + 7vw);
   font-style: normal;
   font-weight: 900;
   line-height: normal;
@@ -42,7 +42,7 @@ const Name = styled.div`
 const Subtitle = styled.div`
   color: #5a6695;
   font-family: "Andika";
-  font-size: 52px;
+  font-size: calc(10px + 5vw);
   margin-top: -7px;
   font-style: normal;
   font-weight: 400;
