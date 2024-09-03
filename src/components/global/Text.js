@@ -6,6 +6,7 @@ const Text = ({
   color = "#fff",
   weight = "700",
   padding = "0",
+  textAlign = "left",
   children,
 }) => {
   const textStyle = {
@@ -14,6 +15,7 @@ const Text = ({
     fontFamily: "Andika",
     fontStyle: "normal",
     lineHeight: "normal",
+    textAlign: textAlign,
   };
 
   return (

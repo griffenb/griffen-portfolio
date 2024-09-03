@@ -5,6 +5,13 @@ import Image from "../global/Image";
 import Text from "../global/Text";
 import fallenIpad from "../../assets/projects/fallen-ipad.png";
 
+import HorizontalLine from "./HorizontalLine.js";
+
+import AidI from "./AidI.js";
+import Fallen from "./Fallen.js";
+import Risen from "./Risen.js";
+import Shoply from "./Shoply.js";
+
 const ProjectsContainer = styled.div`
   background: linear-gradient(180deg, #465fc8 28.57%, #70bff8 100%);
   width: 100vw;
@@ -31,12 +38,7 @@ const Negative = styled.div`
   margin-top: -50px;
 `;
 
-const Rect = styled.div`
-  border: 2px solid #ffd543;
-  background: #fff;
-  width: fit-content;
-  height: fit-content;
-`;
+const projects = [<Shoply />, <AidI />, <Risen />];
 
 const Projects = () => {
   return (
@@ -49,12 +51,14 @@ const Projects = () => {
         <Text mult={5} padding={"0 0 0 60px"}>
           Fallen Star
         </Text>
-        <Rect>
-          <Text color={"#000"} mult={0.5}>
-            <p>Interactive</p> Screen
-          </Text>
-        </Rect>
+        <Fallen />
       </Negative>
+      {projects.map((project, index) => (
+        <div key={index}>
+          <HorizontalLine />
+          {project}
+        </div>
+      ))}
     </ProjectsContainer>
   );
 };
