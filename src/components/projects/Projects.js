@@ -14,7 +14,7 @@ import Shoply from "./Shoply.js";
 
 const ProjectsContainer = styled.div`
   background: linear-gradient(180deg, #465fc8 28.57%, #70bff8 100%);
-  width: 100vw;
+  width: auto;
 `;
 
 const HeaderContainer = styled.div`
@@ -27,11 +27,12 @@ const HeaderContainer = styled.div`
 const Header = styled.div`
   color: #fff;
   font-family: "Andika";
-  font-size: calc(20px + 7vw);
+  font-size: calc(20px + 4.5vw);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  padding: 30px 0 0 30px;
+  padding: 0 0 0 60px;
+  margin-top: 40px;
 `;
 
 const Negative = styled.div`
@@ -45,12 +46,8 @@ const Projects = () => {
     <ProjectsContainer>
       <HeaderContainer>
         <Header>Projects!</Header>
-        <Image source={fallenIpad} padding={"50px 20px"} />
       </HeaderContainer>
       <Negative>
-        <Text mult={5} padding={"0 0 0 60px"}>
-          Fallen Star
-        </Text>
         <Fallen />
       </Negative>
       {projects.map((project, index) => (

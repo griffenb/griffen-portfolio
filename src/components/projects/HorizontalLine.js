@@ -4,12 +4,20 @@ const HorizontalLine = () => {
   return (
     <div
       style={{
-        margin: "0 20px 0 20px",
-        width: `calc(100% - 40px)`,
-        height: "4px",
-        backgroundColor: "white",
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
       }}
-    ></div>
+    >
+      <div
+        style={{
+          width: "calc(100% - 40px)",
+          maxWidth: "1200px",
+          height: "2px",
+          backgroundColor: "white",
+        }}
+      ></div>
+    </div>
   );
 };
 

@@ -14,6 +14,8 @@ const HomeContainer = styled.div`
 
 const MenuContainer = styled.div`
   display: flex;
+  position: relative;
+  z-index: 2;
 `;
 
 const ProfPic = styled.img`
@@ -23,26 +25,29 @@ const ProfPic = styled.img`
   padding: 43px 0 0 60px;
 `;
 const About = styled.div`
-  padding: 150px 0 0 126px;
-  overflow-x: hidden; // Prevent horizontal overflow
+  padding: 100px 0 0 126px; // Reduced top padding from 150px to 100px
+  overflow-x: hidden;
+  z-index: 1;
+  top: 100px;
 `;
 
 const Name = styled.div`
   color: #465fc8;
   font-family: "Andika";
-  font-size: calc(20px + 7vw);
+  font-size: calc(10px + 6vw);
   font-style: normal;
   font-weight: 900;
   line-height: normal;
   letter-spacing: 5px;
-  padding-right: 0; // Ensure no excessive padding
-  margin-right: 0; // Ensure no excessive margin
+  padding-right: 0;
+  margin-right: 0;
+  margin-top: 0px; // Added negative margin to push it up
 `;
 
 const Subtitle = styled.div`
   color: #5a6695;
   font-family: "Andika";
-  font-size: calc(10px + 5vw);
+  font-size: calc(7px + 3vw);
   margin-top: -7px;
   font-style: normal;
   font-weight: 400;
@@ -50,11 +55,14 @@ const Subtitle = styled.div`
   padding-right: 0; // Ensure no excessive padding
   margin-right: 0; // Ensure no excessive margin
 `;
+const ProjectsContainer = styled.div`
+  width: auto;
+  overflow-x: hidden;
+`;
 
 const Home = () => {
   return (
     <HomeContainer>
-      <ProfPic src={profilePic} />
       <MenuContainer>
         <Menu />
       </MenuContainer>
@@ -62,7 +70,9 @@ const Home = () => {
         <Name>Griffen Bengard</Name>
         <Subtitle>UX Design</Subtitle>
       </About>
-      <Projects />
+      <ProjectsContainer>
+        <Projects />
+      </ProjectsContainer>
     </HomeContainer>
   );
 };
