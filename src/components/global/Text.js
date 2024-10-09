@@ -4,7 +4,7 @@ const Text = ({
   base = "12px",
   mult = 1,
   color = "#fff",
-  weight = "599",
+  weight = "600",
   padding = "0",
   textAlign = "left",
   children,
