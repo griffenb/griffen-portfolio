@@ -1,10 +1,10 @@
 import React from "react";
 
 const Text = ({
-  base = "10px",
+  base = "12px",
   mult = 1,
   color = "#fff",
-  weight = "700",
+  weight = "599",
   padding = "0",
   textAlign = "left",
   children,

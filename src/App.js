@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Home from "./components/home/Home.js";
 import Projects from "./components/projects/Projects.js";
+import Footer from "./components/projects/Footer.js";
 
 // import profilePic from "./assets/Profile Pic Group.svg";
 // import fallenStarHome from "./assets/Fallen Star Home Frame.svg";

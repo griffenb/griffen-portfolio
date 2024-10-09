@@ -59,15 +59,31 @@ const Fallen = () => {
         </div>
         <div className="flex-1 flex items-center">
           <TextWrapper>
-            <Text mult={0.5} padding="0px 0px 0px 50px" textAlign="center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Commodo elit at imperdiet dui accumsan sit amet nulla. Sit amet
-              tellus cras adipiscing enim eu. Vitae tortor condimentum lacinia
-              quis vel eros donec ac odio. Consequat semper viverra nam libero
-              justo laoreet sit. Elementum curabitur vitae nunc sed velit
-              dignissim sodales ut.
+            <Text mult={0.5} padding="0px 0px 0px 50px" textAlign="left">
+              Fallen Star takes the UCSD art installation to the next level with
+              a fully functional kiosk demo that brings the experience to life.
+              Featuring hand-drawn animations, an in-depth wireframe, and even
+              some old-fashioned carpentry, the project was built in Figma to
+              match the immersive aesthetic of the original installation. I led
+              the effort alongside a small team to create this enhanced
+              experience.
             </Text>
+            <a
+              href="https://www.figma.com/proto/kYvwFweYaz9PCHV5PfdICI/DSGN100-A4-(Copy)?node-id=1-3&starting-point-node-id=1%3A3&t=TLad4R1xg1U0P4Xu-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontWeight: "bold",
+                textDecoration: "underline",
+                display: "block", // Ensures it appears on a new line
+                padding: "10px 0 0 50px",
+                textAlign: "left",
+                color: "white", // Set text color to white
+                textDecorationColor: "currentColor",
+              }}
+            >
+              See more!
+            </a>
           </TextWrapper>
         </div>
       </ContentWrapper>

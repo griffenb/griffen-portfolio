@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import profilePic from "../../assets/home/profile.svg";
 import Menu from "./Menu.js";
+import Footer from "../projects/Footer.js";
 
 import Projects from "./Projects.js";
 
 const HomeContainer = styled.div`
-  background: linear-gradient(0deg, #f2f5ce 0%, #f2f5ce 100%);
+  background: #fcf6da;
   overflow-x: hidden; // Add this to ensure no horizontal scroll
   width: auto;
   height: 120vh;
@@ -25,14 +26,14 @@ const ProfPic = styled.img`
   padding: 43px 0 0 60px;
 `;
 const About = styled.div`
-  padding: 100px 0 0 126px; // Reduced top padding from 150px to 100px
+  padding: 100px 0 0 126px; // Adjust padding as needed
   overflow-x: hidden;
   z-index: 1;
   top: 100px;
 `;
 
 const Name = styled.div`
-  color: #465fc8;
+  color: #324aa9;
   font-family: "Andika";
   font-size: calc(10px + 6vw);
   font-style: normal;
@@ -45,7 +46,7 @@ const Name = styled.div`
 `;
 
 const Subtitle = styled.div`
-  color: #5a6695;
+  color: #40546d;
   font-family: "Andika";
   font-size: calc(7px + 3vw);
   margin-top: -7px;
@@ -66,7 +67,9 @@ const Home = () => {
       <MenuContainer>
         <Menu />
       </MenuContainer>
-      <About>
+      <About id="about-text">
+        {" "}
+        {/* Ensure this ID is set */}
         <Name>Griffen Bengard</Name>
         <Subtitle>UX Design</Subtitle>
       </About>
