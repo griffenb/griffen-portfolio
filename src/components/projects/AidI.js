@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 import Text from "../global/Text";
@@ -31,9 +31,39 @@ const TextWrapper = styled.div`
   max-width: 600px; // Slightly reduced to accommodate larger image
   margin-left: 100px; // Reduced from 150px to balance layout
   margin-right: auto;
+  opacity: 0; // Start hidden
+  transition: opacity 1s ease-in; // Increased duration to 1s for a slower fade transition
+  &.fade-in {
+    opacity: 1; // Fade in effect
+  }
 `;
 
 const AidI = () => {
+  const textRef = useRef(null); // Reference for the text wrapper
+  const [isVisible, setIsVisible] = useState(false); // State to track visibility
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true); // Set to true when in view
+          observer.disconnect(); // Stop observing after it becomes visible
+        }
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible
+    );
+
+    if (textRef.current) {
+      observer.observe(textRef.current); // Start observing the text wrapper
+    }
+
+    return () => {
+      if (textRef.current) {
+        observer.unobserve(textRef.current); // Clean up observer
+      }
+    };
+  }, []);
+
   return (
     <Container>
       <Text id="AidI" mult={4} padding="40px 0 40px 0px" textAlign="center">
@@ -52,7 +82,7 @@ const AidI = () => {
           </Negative>
         </div>
         <div className="flex-1 flex items-center">
-          <TextWrapper>
+          <TextWrapper ref={textRef} className={isVisible ? "fade-in" : ""}>
             <Text mult={0.5} padding="0px 0px 0px 50px" textAlign="left">
               Designed as a triage tool for therapy needs, Aid●I connects
               patients, therapists, and medical professionals. It was built

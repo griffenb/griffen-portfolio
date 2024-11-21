@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Footer from "../projects/Footer";
 import Text from "../global/Text";
@@ -22,6 +22,11 @@ const TextWrapper = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px 40px 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  &.fade-in {
+    opacity: 1;
+  }
 `;
 
 const HomeButton = styled.button`
@@ -39,6 +44,31 @@ const HomeButton = styled.button`
 `;
 
 const AboutMe = () => {
+  const textRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (textRef.current) {
+      observer.observe(textRef.current);
+    }
+
+    return () => {
+      if (textRef.current) {
+        observer.unobserve(textRef.current);
+      }
+    };
+  }, []);
+
   const scrollToTop = () => {
     const startPosition = window.scrollY; // Get the current scroll position
     const targetPosition = 0; // Target scroll position
@@ -66,7 +96,7 @@ const AboutMe = () => {
         About Me
       </Text>
       <ContentWrapper>
-        <TextWrapper>
+        <TextWrapper ref={textRef} className={isVisible ? "fade-in" : ""}>
           <Text mult={0.5} textAlign="left">
             I'm a web designer and developer who graduated from University of
             California, San Diego in 2024 with a degree in Cognitive Science:
