@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5f58f3a3.css",
+    "main.js": "/static/js/main.8489bd6f.js",
+    "static/js/453.7ee4d7b8.chunk.js": "/static/js/453.7ee4d7b8.chunk.js",
+    "static/media/Risen Site.svg": "/static/media/Risen Site.fd05eabdc46ba31fc3fe31e5cf040ad5.svg",
+    "static/media/profile.svg": "/static/media/profile.7f961a8acaa908b6f9ef138c65da3921.svg",
+    "static/media/Shoply Site.svg": "/static/media/Shoply Site.a28414368df90fbfda87c98e07021557.svg",
+    "static/media/risen-hover.gif": "/static/media/risen-hover.a873a4b3aa244ae81584.gif",
+    "static/media/Kiosk Group.svg": "/static/media/Kiosk Group.26d7915f9612c0fd4723b64ee2917062.svg",
+    "static/media/fallen-hover.svg": "/static/media/fallen-hover.b625ba4f38524bd27f449f8f8d299d38.svg",
+    "static/media/fallen-star.svg": "/static/media/fallen-star.b6dfe3efdf91d3bd89b253f049c75c15.svg",
+    "static/media/clouds-fallen.gif": "/static/media/clouds-fallen.5d875bcde1078284084c.gif",
+    "static/media/shoply-hover.gif": "/static/media/shoply-hover.a4029e1be29f65b1c484.gif",
+    "static/media/fallen-ipad.png": "/static/media/fallen-ipad.1329d452d03b30cc9278.png",
+    "static/media/AidI Site.svg": "/static/media/AidI Site.6118555ccb5eb548047f06022cbf619f.svg",
+    "static/media/arlo-hover.gif": "/static/media/arlo-hover.b76405b5bb94dcc51f8f.gif",
+    "static/media/risen.svg": "/static/media/risen.5f939db8f699df9e0c3c06478137c3d2.svg",
+    "static/media/Shoply Group.svg": "/static/media/Shoply Group.4cfc37cbba9fb50679d4c3bb3586c44f.svg",
+    "static/media/arlo.svg": "/static/media/arlo.2433a9e5977b0595258158f88191efca.svg",
+    "static/media/github icon.svg": "/static/media/github icon.cad1868224cc2e239f0b64b9c04f084c.svg",
+    "static/media/linkedin icon new.svg": "/static/media/linkedin icon new.a4f8fb77c9328f3e7cfa5ff7731783cd.svg",
+    "static/media/linkedin icon.svg": "/static/media/linkedin icon.a9391f86708de76ab713d282fe9a5a73.svg",
+    "static/media/Phone Icon New.svg": "/static/media/Phone Icon New.6e43b284045706e6197f0022274f7b3f.svg",
+    "static/media/iphone icon.svg": "/static/media/iphone icon.8154bc4be443c537ddaae4f27bcf8ac3.svg",
+    "static/media/Close Button.svg": "/static/media/Close Button.af02d5d99b86233da9773ce50e0c04ea.svg",
+    "index.html": "/index.html",
+    "static/media/email icon new.svg": "/static/media/email icon new.703ea85d2bef3675643799fde6490d96.svg",
+    "static/media/email icon.svg": "/static/media/email icon.76255c730375a0c64860fa147719d61a.svg",
+    "static/media/Option Bars.svg": "/static/media/Option Bars.80b96d0135b1892775a9e0ce828681c6.svg",
+    "main.5f58f3a3.css.map": "/static/css/main.5f58f3a3.css.map",
+    "main.8489bd6f.js.map": "/static/js/main.8489bd6f.js.map",
+    "453.7ee4d7b8.chunk.js.map": "/static/js/453.7ee4d7b8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5f58f3a3.css",
+    "static/js/main.8489bd6f.js"
+  ]
+}
