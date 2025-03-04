@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5f58f3a3.css",
-    "main.js": "/static/js/main.d7883b18.js",
+    "main.css": "/static/css/main.0e07fd0b.css",
+    "main.js": "/static/js/main.ceec5f3f.js",
     "static/js/453.7ee4d7b8.chunk.js": "/static/js/453.7ee4d7b8.chunk.js",
     "static/media/Risen Site.svg": "/static/media/Risen Site.937d82e087c2e5e4914e649297a8986f.svg",
     "static/media/profile.svg": "/static/media/profile.a061308b97acea00dfaa16c30ab3b356.svg",
@@ -23,17 +23,16 @@
     "static/media/linkedin icon.svg": "/static/media/linkedin icon.2b5fd6192537bc1bdbd097d05df37d0c.svg",
     "static/media/Phone Icon New.svg": "/static/media/Phone Icon New.58fa73932921eac94da90a34ffc40737.svg",
     "static/media/iphone icon.svg": "/static/media/iphone icon.1a60fdeda700783fd8052959b915053c.svg",
-    "static/media/Close Button.svg": "/static/media/Close Button.0c77ce2f43b581bedefabc468f4dddf5.svg",
     "index.html": "/index.html",
     "static/media/email icon new.svg": "/static/media/email icon new.1ec684ab026e76b81ac5a09a2be663e2.svg",
     "static/media/email icon.svg": "/static/media/email icon.e6edf04476c7c6f83ebccb335657a1b6.svg",
     "static/media/Option Bars.svg": "/static/media/Option Bars.939dc3a72b8564f833280ba651e2a868.svg",
-    "main.5f58f3a3.css.map": "/static/css/main.5f58f3a3.css.map",
-    "main.d7883b18.js.map": "/static/js/main.d7883b18.js.map",
+    "main.0e07fd0b.css.map": "/static/css/main.0e07fd0b.css.map",
+    "main.ceec5f3f.js.map": "/static/js/main.ceec5f3f.js.map",
     "453.7ee4d7b8.chunk.js.map": "/static/js/453.7ee4d7b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f58f3a3.css",
-    "static/js/main.d7883b18.js"
+    "static/css/main.0e07fd0b.css",
+    "static/js/main.ceec5f3f.js"
   ]
 }
