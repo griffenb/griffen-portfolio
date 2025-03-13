@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0e07fd0b.css",
-    "main.js": "/static/js/main.7757084c.js",
+    "main.js": "/static/js/main.a4442146.js",
     "static/js/453.7ee4d7b8.chunk.js": "/static/js/453.7ee4d7b8.chunk.js",
     "static/media/Risen Site.svg": "/static/media/Risen Site.937d82e087c2e5e4914e649297a8986f.svg",
     "static/media/profile.svg": "/static/media/profile.a061308b97acea00dfaa16c30ab3b356.svg",
@@ -12,9 +12,9 @@
     "static/media/fallen-star.svg": "/static/media/fallen-star.f922d3dfc8be3df5a2710bf27ab1bc16.svg",
     "static/media/clouds-fallen.gif": "/static/media/clouds-fallen.5d875bcde1078284084c.gif",
     "static/media/shoply-hover.gif": "/static/media/shoply-hover.a4029e1be29f65b1c484.gif",
-    "static/media/ux design text.svg": "/static/media/ux design text.60b25c05569365042667558fc3833248.svg",
     "static/media/fallen-ipad.png": "/static/media/fallen-ipad.1329d452d03b30cc9278.png",
     "static/media/AidI Site.svg": "/static/media/AidI Site.ceff78666c8c59a93c983bc0be5e4f85.svg",
+    "static/media/ux design text new.svg": "/static/media/ux design text new.2e149979def8ca519985e7d707cd69ed.svg",
     "static/media/arlo-hover.gif": "/static/media/arlo-hover.b76405b5bb94dcc51f8f.gif",
     "static/media/risen.svg": "/static/media/risen.aade6319abe58da0d31939c0d5ba3e2c.svg",
     "static/media/Shoply Group.svg": "/static/media/Shoply Group.77adaa17a393aef5cb00c6461dcd520b.svg",
@@ -29,11 +29,11 @@
     "static/media/email icon.svg": "/static/media/email icon.e6edf04476c7c6f83ebccb335657a1b6.svg",
     "static/media/Option Bars.svg": "/static/media/Option Bars.939dc3a72b8564f833280ba651e2a868.svg",
     "main.0e07fd0b.css.map": "/static/css/main.0e07fd0b.css.map",
-    "main.7757084c.js.map": "/static/js/main.7757084c.js.map",
+    "main.a4442146.js.map": "/static/js/main.a4442146.js.map",
     "453.7ee4d7b8.chunk.js.map": "/static/js/453.7ee4d7b8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0e07fd0b.css",
-    "static/js/main.7757084c.js"
+    "static/js/main.a4442146.js"
   ]
 }
