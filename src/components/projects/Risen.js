@@ -17,71 +17,58 @@ const ContentWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   padding-top: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Negative = styled.div`
   margin-top: -50px;
-  width: 90vw; // Increased from 75vw
-  max-width: 500px; // Increased from 370px
+  width: 90vw;
+  max-width: 500px;
   z-index: -1;
 `;
 
+const ResponsiveImage = styled(Image)`
+  @media (max-width: 768px) {
+    align-items: center;
+  }
+`;
+
 const TextWrapper = styled.div`
-  margin-top: -70px; // Adjust this value to move the text up or down
-  max-width: 600px; // Slightly reduced to accommodate larger image
-  margin-left: 100px; // Reduced from 150px to balance layout
+  margin-top: -70px;
+  max-width: 600px;
+  margin-left: 100px;
   margin-right: auto;
-  opacity: 0; // Start hidden
-  transition: opacity 0.5s ease-in; // Keep duration at 0.5s for the fade transition
-  &.fade-in {
-    opacity: 1; // Fade in effect
+
+  @media (max-width: 768px) {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
   }
 `;
 
 const Risen = () => {
-  const textRef = useRef(null); // Reference for the text wrapper
-  const [isVisible, setIsVisible] = useState(false); // State to track visibility
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true); // Set to true when in view
-          observer.disconnect(); // Stop observing after it becomes visible
-        }
-      },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
-    );
-
-    if (textRef.current) {
-      observer.observe(textRef.current); // Start observing the text wrapper
-    }
-
-    return () => {
-      if (textRef.current) {
-        observer.unobserve(textRef.current); // Clean up observer
-      }
-    };
-  }, []);
-
   return (
     <Container>
-      <Text mult={4} padding="40px 0 40px 0px" textAlign="center">
+      <Text id="Risen" mult={4} padding="0px 0 20px 0px" textAlign="center">
         Risen Esports
       </Text>
       <ContentWrapper>
         <div className="pl-10">
           <Negative>
-            <Image
+            <ResponsiveImage
               source={RisenSite}
-              padding={"50px 0px 50px 50px"}
-              width="100%" // Ensures image fills its container
+              padding={"30px 50px 30px 0px"}
+              width="100%"
             />
           </Negative>
         </div>
         <div className="flex-1 flex items-center">
-          <TextWrapper ref={textRef} className={isVisible ? "fade-in" : ""}>
-            <Text mult={0.5} padding="0px 0px 0px 50px" textAlign="left">
+          <TextWrapper>
+            <Text mult={0.5} padding="0px 0px 0px 0px" textAlign="left">
               As one of the larger amateur tournament organizers for League of
               Legends, Risen Esports has made a name for itself in the gaming
               community. Through my work there, I managed the social media
@@ -95,10 +82,10 @@ const Risen = () => {
               style={{
                 fontWeight: "bold",
                 textDecoration: "underline",
-                display: "block", // Ensures it appears on a new line
-                padding: "10px 0 0 50px",
+                display: "block",
+                padding: "10px 0 0 0px",
                 textAlign: "left",
-                color: "white", // Set text color to white
+                color: "white",
                 textDecorationColor: "currentColor",
               }}
             >

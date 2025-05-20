@@ -3,44 +3,87 @@ import styled from "styled-components";
 import optionsIcon from "../../assets/projects/Option Bars.svg";
 import email from "../../assets/projects/email icon new.svg";
 import linkedin from "../../assets/projects/linkedin icon new.svg";
-import closeIcon from "../../assets/projects/Close Button.svg";
-import phoneIcon from "../../assets/projects/Phone Icon New.svg"; // Import phone icon
+import phoneIcon from "../../assets/projects/Phone Icon New.svg";
 
 const MenuContainer = styled.div`
   position: absolute;
-  display: inline-block;
-  right: 30px;
-  top: 43px;
+  display: flex;
+  align-items: center;
+  right: 2vw;
+  top: 5vh;
+  gap: 10px;
+
+  @media (min-width: 769px) {
+    /* Desktop only */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    top: 2vh;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+`;
+
+const ButtonColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (min-width: 769px) {
+    align-items: center;
+    order: 2;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    position: static;
+    justify-content: space-evenly;
+    flex-grow: 1;
+  }
 `;
 
 const Button = styled.img`
   cursor: pointer;
   width: 31px;
   height: 38px;
-`;
 
-const DropdownItem = styled.a`
-  font-family: "Andika";
-  color: white; // Changed font color to white
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  &:hover {
-    background-color: #566ecd;
+  @media (max-width: 768px) {
+    width: 28px;
+    height: 34px;
   }
 `;
 
 const SidebarContainer = styled.div`
   position: fixed;
   top: 20px;
-  left: calc(100% - 250px);
-  width: 11%;
-  height: 45%;
+  right: 2vw;
+  width: 200px;
   background: #324aa9;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
-  z-index: 3;
-  border-radius: 10px; // Added rounded corners
+  z-index: 99999;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  padding: 15px;
+
+  p {
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  p:hover {
+    background-color: #566ecd;
+    border-radius: 5px;
+  }
 `;
 
 const TooltipContainer = styled.div`
@@ -58,14 +101,23 @@ const Tooltip = styled.div`
   position: absolute;
   z-index: 1;
   bottom: 0%;
-  left: -400%;
-  margin-left: 0px;
+  left: -300%;
   opacity: 0;
   transition: opacity 0.3s;
 
   ${TooltipContainer}:hover & {
     visibility: visible;
     opacity: 1;
+  }
+`;
+
+const MenuButton = styled.img`
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+
+  @media (max-width: 768px) {
+    display: none; /* Hides menu button on mobile */
   }
 `;
 
@@ -88,34 +140,11 @@ const scrollDownPercentage = (percentage) => {
   requestAnimationFrame(animation); // Start the animation
 };
 
-const Menu = ({ setIsOpen }) => {
-  const [isOpen, setLocalIsOpen] = useState(false);
-  const sidebarRef = useRef(null); // Create a ref for the sidebar
-  const buttonClickedRef = useRef(false); // Ref to track button click
+const Menu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const sidebarRef = useRef(null);
+  const buttonClickedRef = useRef(false);
 
-  // Effect to lock/unlock body scroll
-  useEffect(() => {
-    // Remove the scroll lock effect
-    // document.body.style.overflow = "hidden"; // Prevent scrolling
-    // document.body.style.overflow = "unset"; // Restore scrolling
-  }, [isOpen]);
-
-  // Effect to close sidebar on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      setLocalIsOpen(false); // Close sidebar on scroll
-    };
-
-    // Add scroll event listener
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  // Effect to close sidebar when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -123,73 +152,68 @@ const Menu = ({ setIsOpen }) => {
         !sidebarRef.current.contains(event.target) &&
         !buttonClickedRef.current
       ) {
-        setLocalIsOpen(false); // Close sidebar if clicked outside and button wasn't clicked
+        setIsOpen(false);
       }
-      buttonClickedRef.current = false; // Reset the button click state
+      buttonClickedRef.current = false;
     };
 
-    // Add click event listener
-    document.addEventListener("mousedown", handleClickOutside);
+    const handleScroll = () => {
+      setIsOpen(false);
+    };
 
-    // Cleanup event listener on component unmount
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <MenuContainer className="space-y-4">
-      <Button
+    <MenuContainer>
+      <ButtonColumn>
+        <Button
+          src={email}
+          alt="Email"
+          onClick={() => window.open("mailto:griffen2020@gmail.com")}
+        />
+        <Button
+          src={linkedin}
+          alt="LinkedIn"
+          onClick={() =>
+            window.open("https://www.linkedin.com/in/griffen-bengard")
+          }
+        />
+        <TooltipContainer>
+          <Button
+            src={phoneIcon}
+            alt="Phone"
+            onClick={() => window.open("tel:8059906157")}
+          />
+          <Tooltip>(805)-990-6157</Tooltip>
+        </TooltipContainer>
+      </ButtonColumn>
+      <MenuButton
         src={optionsIcon}
         alt="Menu"
         onMouseDown={() => {
-          buttonClickedRef.current = true; // Set the button clicked state
-          setLocalIsOpen((prev) => !prev); // Toggle sidebar visibility
+          buttonClickedRef.current = true;
+          setIsOpen((prev) => !prev);
         }}
       />
       <SidebarContainer ref={sidebarRef} isOpen={isOpen}>
         {isOpen && (
           <>
-            <p style={{ color: "white", padding: "20px" }}>My Projects 😎</p>{" "}
-            {/* Added text above the options */}
-            <DropdownItem href="#" onClick={() => scrollDownPercentage(24)}>
-              <p>Fallen Star 🏠🌟</p>
-            </DropdownItem>
-            <DropdownItem href="#" onClick={() => scrollDownPercentage(41.5)}>
-              <p>Shop.ly 🛒</p>
-            </DropdownItem>
-            <DropdownItem href="#" onClick={() => scrollDownPercentage(56.2)}>
-              <p>Aid●I 🤝</p>
-            </DropdownItem>
-            <DropdownItem href="#" onClick={() => scrollDownPercentage(69.5)}>
-              <p>Risen Esports 🎮</p>
-            </DropdownItem>
-            <DropdownItem href="#" onClick={() => scrollDownPercentage(100)}>
-              <p>About Me </p>
-            </DropdownItem>
+            <p onClick={() => scrollDownPercentage(10)}>My Projects 😎</p>
+            <p onClick={() => scrollDownPercentage(21)}>Fallen Star 🏠🌟</p>
+            <p onClick={() => scrollDownPercentage(39.5)}>Shop.ly 🛒</p>
+            <p onClick={() => scrollDownPercentage(53.2)}>Aid●I 🤝</p>
+            <p onClick={() => scrollDownPercentage(65.5)}>Risen Esports 🎮</p>
+            <p onClick={() => scrollDownPercentage(100)}>About Me</p>
           </>
         )}
       </SidebarContainer>
-      <Button
-        src={email}
-        alt="Email"
-        onClick={() => window.open("mailto:griffen2020@gmail.com")}
-      />
-      <Button
-        src={linkedin}
-        alt="LinkedIn"
-        onClick={() =>
-          window.open("https://www.linkedin.com/in/griffen-bengard")
-        }
-      />
-      <TooltipContainer>
-        <Button
-          src={phoneIcon}
-          alt="Phone"
-          onClick={() => window.open("tel:8059906157")} // Add phone functionality
-        />
-        <Tooltip>(805)-990-6157</Tooltip>
-      </TooltipContainer>
     </MenuContainer>
   );
 };

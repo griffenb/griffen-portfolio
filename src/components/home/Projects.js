@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import arlo from "../../assets/home/projects/arlo.svg";
@@ -8,29 +8,40 @@ import fallenHover from "../../assets/home/projects/fallen-hover.svg";
 import cloudsFallen from "../../assets/home/projects/clouds-fallen.gif";
 import risen from "../../assets/home/projects/risen.svg";
 import risenHover from "../../assets/home/projects/risen-hover.gif";
-import shoply from "../../assets/home/projects/Shoply Group.svg";
-import shoplyHover from "../../assets/home/projects/shoply-hover.gif";
-import aidi from "../../components/projects/AidI";
-import fallenstar from "../../components/projects/Fallen";
-import risenscroll from "../../components/projects/Risen";
-import shoplyscroll from "../../components/projects/Shoply";
+import poke from "../../assets/home/projects/pokereese.svg";
+import pokeHover from "../../assets/home/projects/pokereese hover.gif";
 
 const ImageGallery = styled.div`
   display: flex;
-  padding: 30px 0 0 0;
   flex-direction: row;
-  justify-content: center; // Center items horizontally
-  position: relative;
-  width: 100%; // Ensure it doesn't exceed the viewport width
-  overflow-x: hidden; // Hide any overflow on the x-axis
+  justify-content: center;
+  width: 100%;
+  overflow-x: hidden;
+  padding: 30px 0 0 0;
+
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 10px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const PaddingDiv = styled.div`
   width: 25%;
-  height: 45vh; // Example height, adjust as needed
+  height: 45vh;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+  }
 `;
 
 const ImageContainer = styled.button`
@@ -52,26 +63,35 @@ const ImageContainer = styled.button`
 `;
 
 const Project = styled.img`
-  width: ${({ isGif }) => (isGif ? "350px" : "350px")};
-  height: ${({ isGif }) => (isGif ? "250px" : "250px")};
-  object-fit: ${({ isGif }) =>
-    isGif ? "cover" : "contain"}; // 'cover' for GIFs, 'contain' for SVGs
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: ${(props) => (props.isPoke ? "400px" : "350px")};
+  height: ${(props) => (props.isPoke ? "300px" : "250px")};
+  object-fit: contain;
+  position: relative;
   z-index: 2;
+  transform: ${(props) => (props.isPoke ? "translateX(-50px)" : "none")};
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    transform: none;
+  }
 `;
 
 const Hover = styled.img`
-  width: 460px;
-  height: 300px;
+  width: ${(props) => (props.isPoke ? "520px" : "460px")};
+  height: ${(props) => (props.isPoke ? "340px" : "300px")};
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); // Center the image
+  transform: ${(props) =>
+    props.isPoke ? "translate(-60%, -50%)" : "translate(-50%, -50%)"};
   z-index: 3;
   display: flex;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const projects = [
@@ -79,67 +99,87 @@ const projects = [
     src: arlo,
     hoverSrc: arloHover,
     alt: "Arlo",
-    keyword: "AidI", // Keyword for scrolling to the Aid●I text
+    keyword: "AidI",
+    scrollTo: 53.2,
   },
   {
     src: fallen,
     hoverSrc: fallenHover,
     overlaySrc: cloudsFallen,
     alt: "Fallen Star",
-    keyword: "FallenStar", // Keyword for scrolling
+    keyword: "FallenStar",
+    scrollTo: 21,
   },
   {
     src: risen,
     hoverSrc: risenHover,
     alt: "Risen",
-    keyword: "Risen", // Keyword for scrolling
+    keyword: "Risen",
+    scrollTo: 65.5,
   },
   {
-    src: shoply,
-    hoverSrc: shoplyHover,
-    alt: "Shoply",
-    keyword: "Shoply", // Keyword for scrolling
+    src: poke,
+    hoverSrc: pokeHover,
+    alt: "poke",
+    keyword: "poke",
+    scrollTo: 39.5,
   },
 ];
 
-const ProjectContainer = ({ src, hoverSrc, overlaySrc, alt }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const isGif = src.endsWith(".gif");
+const scrollDownPercentage = (percentage) => {
+  const totalHeight = document.body.scrollHeight;
+  const scrollToPosition = totalHeight * (percentage / 100);
+  const startPosition = window.scrollY;
+  const distance = scrollToPosition - startPosition;
+  const duration = 500;
+  let startTime = null;
 
-  const scrollDownPercentage = (percentage) => {
-    const totalHeight = document.body.scrollHeight; // Get the total height of the document
-    const scrollToPosition = totalHeight * (percentage / 100); // Calculate the scroll position
-    const startPosition = window.scrollY; // Get the current scroll position
-    const distance = scrollToPosition - startPosition; // Calculate the distance to scroll
-    const duration = 500; // Duration in milliseconds
-    let startTime = null;
-
-    const animation = (currentTime) => {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const progress = Math.min(timeElapsed / duration, 1); // Calculate progress
-      window.scrollTo(0, startPosition + distance * progress); // Scroll to the calculated position
-      if (progress < 1) requestAnimationFrame(animation); // Continue the animation
-    };
-
-    requestAnimationFrame(animation); // Start the animation
+  const animation = (currentTime) => {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    window.scrollTo(0, startPosition + distance * progress);
+    if (progress < 1) requestAnimationFrame(animation);
   };
+
+  requestAnimationFrame(animation);
+};
+
+const ProjectContainer = ({
+  src,
+  hoverSrc,
+  overlaySrc,
+  alt,
+  scrollTo,
+  keyword,
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isPoke = keyword === "poke";
 
   return (
     <PaddingDiv>
       <ImageContainer
-        onClick={() => {
-          if (alt === "Arlo") scrollDownPercentage(56.2);
-          if (alt === "Fallen Star") scrollDownPercentage(24);
-          if (alt === "Risen") scrollDownPercentage(69.5);
-          if (alt === "Shoply") scrollDownPercentage(41.5);
-        }}
+        onClick={() => scrollDownPercentage(scrollTo)}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <Project src={isHovered ? hoverSrc : src} alt={alt} isGif={isGif} />
-        {isHovered && overlaySrc && (
-          <Hover src={overlaySrc} onClick={() => scrollDownPercentage(50)} /> // Ensure the hover image also triggers the scroll
+        <Project
+          src={isMobile ? src : isHovered ? hoverSrc : src}
+          alt={alt}
+          isPoke={isPoke}
+        />
+        {isHovered && overlaySrc && !isMobile && (
+          <Hover src={overlaySrc} isPoke={isPoke} />
         )}
       </ImageContainer>
     </PaddingDiv>
@@ -148,30 +188,11 @@ const ProjectContainer = ({ src, hoverSrc, overlaySrc, alt }) => {
 
 const Projects = () => {
   return (
-    <>
-      <ImageGallery className="place-content-stretch">
-        {projects.map((project, index) => (
-          <ProjectContainer {...project} key={index} />
-        ))}
-      </ImageGallery>
-      {/* Existing sections with corresponding IDs */}
-      <div id="AidI">
-        <h2></h2> {/* Added ID here */}
-        {/* Aid-I project content goes here */}
-      </div>
-      <div id="FallenStar">
-        <h2></h2>
-        {/* Fallen Star project content goes here */}
-      </div>
-      <div id="Risen">
-        <h2></h2>
-        {/* Risen project content goes here */}
-      </div>
-      <div id="Shoply">
-        <h2></h2>
-        {/* Shoply project content goes here */}
-      </div>
-    </>
+    <ImageGallery>
+      {projects.map((project, index) => (
+        <ProjectContainer {...project} key={index} />
+      ))}
+    </ImageGallery>
   );
 };
 

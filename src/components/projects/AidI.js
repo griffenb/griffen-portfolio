@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import Text from "../global/Text";
@@ -17,95 +17,85 @@ const ContentWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   padding-top: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Negative = styled.div`
   margin-top: -50px;
-  width: 90vw; // Increased from 75vw
-  max-width: 500px; // Increased from 370px
+  width: 90vw;
+  max-width: 500px;
   z-index: -1;
 `;
 
+const ResponsiveImage = styled(Image)`
+  @media (max-width: 768px) {
+    align-items: center;
+  }
+`;
+
 const TextWrapper = styled.div`
-  margin-top: -70px; // Adjust this value to move the text up or down
-  max-width: 600px; // Slightly reduced to accommodate larger image
-  margin-left: 100px; // Reduced from 150px to balance layout
+  margin-top: -70px;
+  max-width: 600px;
+  margin-left: 100px;
   margin-right: auto;
-  opacity: 0; // Start hidden
-  transition: opacity 1s ease-in; // Increased duration to 1s for a slower fade transition
-  &.fade-in {
-    opacity: 1; // Fade in effect
+
+  @media (max-width: 768px) {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+`;
+
+const StyledLink = styled.a`
+  font-weight: bold;
+  text-decoration: underline;
+  display: block;
+  padding-top: 10px;
+  text-align: left;
+  color: white;
+  text-decoration-color: currentColor;
+
+  @media (max-width: 768px) {
+    text-align: left;
   }
 `;
 
 const AidI = () => {
-  const textRef = useRef(null); // Reference for the text wrapper
-  const [isVisible, setIsVisible] = useState(false); // State to track visibility
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true); // Set to true when in view
-          observer.disconnect(); // Stop observing after it becomes visible
-        }
-      },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
-    );
-
-    if (textRef.current) {
-      observer.observe(textRef.current); // Start observing the text wrapper
-    }
-
-    return () => {
-      if (textRef.current) {
-        observer.unobserve(textRef.current); // Clean up observer
-      }
-    };
-  }, []);
-
   return (
     <Container>
-      <Text id="AidI" mult={4} padding="40px 0 40px 0px" textAlign="center">
-        {" "}
-        {/* Added ID here */}
+      <Text id="AidI" mult={4} padding="0px 0 0px 0px" textAlign="center">
         Aid●I
       </Text>
       <ContentWrapper>
         <div className="pl-10">
           <Negative>
-            <Image
+            <ResponsiveImage
               source={AidISite}
-              padding={"50px 0px 50px 50px"}
-              width="100%" // Ensures image fills its container
+              padding={"50px 50px 50px 0px"}
+              width="100%"
             />
           </Negative>
         </div>
         <div className="flex-1 flex items-center">
-          <TextWrapper ref={textRef} className={isVisible ? "fade-in" : ""}>
-            <Text mult={0.5} padding="0px 0px 0px 50px" textAlign="left">
+          <TextWrapper>
+            <Text mult={0.5} padding="0px 0px 0px 0px" textAlign="left">
               Designed as a triage tool for therapy needs, Aid●I connects
               patients, therapists, and medical professionals. It was built
               specifically for regions where mental health care is lacking or
               stigmatized. The project featured extensive wireframes in Figma
               and included a formal presentation to showcase the concept.
             </Text>
-            <a
+            <StyledLink
               href="https://www.figma.com/proto/cdzCwdETRwIDhxOdwIkfuZ/Intern-Project---Final-Prototype-(Copy)?node-id=224-2&node-type=frame&t=76ta3OeqFqz8gu4U-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=224%3A26"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                fontWeight: "bold",
-                textDecoration: "underline",
-                display: "block", // Ensures it appears on a new line
-                padding: "10px 0 0 50px",
-                textAlign: "left",
-                color: "white", // Set text color to white
-                textDecorationColor: "currentColor",
-              }}
             >
               See more!
-            </a>
+            </StyledLink>
           </TextWrapper>
         </div>
       </ContentWrapper>

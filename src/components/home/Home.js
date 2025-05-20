@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import profilePic from "../../assets/home/profile.svg";
+import uxDesignText from "../../assets/home/ux design text new.svg";
 import Menu from "./Menu.js";
 import Footer from "../projects/Footer.js";
-
 import Projects from "./Projects.js";
 
 const HomeContainer = styled.div`
   background: #fcf6da;
-  overflow-x: hidden; // Add this to ensure no horizontal scroll
-  width: auto;
-  height: 120vh;
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
 `;
 
 const MenuContainer = styled.div`
@@ -21,44 +21,62 @@ const MenuContainer = styled.div`
 
 const ProfPic = styled.img`
   position: absolute;
-  height: 20%;
-  width: auto;
-  padding: 43px 0 0 60px;
+  height: auto;
+  max-width: 20%;
+  padding: 10vw 0 0 10vw;
+
+  @media (max-width: 768px) {
+    max-width: 40%;
+    padding: 5vw 0 0 5vw;
+  }
 `;
+
 const About = styled.div`
-  padding: 100px 0 0 126px; // Adjust padding as needed
+  padding: 12vh 8vw 0 8vw;
   overflow-x: hidden;
-  z-index: 1;
-  top: 100px;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 15vh 5vw 0 5vw;
+    text-align: center;
+  }
 `;
 
 const Name = styled.div`
   color: #324aa9;
   font-family: "Andika";
-  font-size: calc(10px + 6vw);
+  font-size: calc(14px + 6vw);
   font-style: normal;
   font-weight: 900;
   line-height: normal;
-  letter-spacing: 5px;
-  padding-right: 0;
-  margin-right: 0;
-  margin-top: 0px; // Added negative margin to push it up
+  letter-spacing: 3px;
+
+  @media (max-width: 768px) {
+    font-size: calc(12px + 5vw);
+    text-align: center;
+  }
 `;
 
-const Subtitle = styled.div`
-  color: #40546d;
-  font-family: "Andika";
-  font-size: calc(7px + 3vw);
-  margin-top: -7px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  padding-right: 0; // Ensure no excessive padding
-  margin-right: 0; // Ensure no excessive margin
+const UxDesignSVG = styled.img`
+  width: 20vw; /* Scales with viewport width */
+  max-width: 350px; /* Prevents it from being too large */
+  height: auto;
+  display: block;
+
+  @media (max-width: 768px) {
+    width: 60%; /* Larger size on mobile */
+    max-width: 250px;
+    margin: 10px auto; /* Centers it on mobile */
+  }
 `;
+
 const ProjectsContainer = styled.div`
-  width: auto;
+  width: 100%;
   overflow-x: hidden;
+
+  @media (max-width: 768px) {
+    padding: 0 5vw;
+  }
 `;
 
 const Home = () => {
@@ -68,10 +86,8 @@ const Home = () => {
         <Menu />
       </MenuContainer>
       <About id="about-text">
-        {" "}
-        {/* Ensure this ID is set */}
         <Name>Griffen Bengard</Name>
-        <Subtitle>UX Design</Subtitle>
+        <UxDesignSVG src={uxDesignText} alt="UX Design" />
       </About>
       <ProjectsContainer>
         <Projects />

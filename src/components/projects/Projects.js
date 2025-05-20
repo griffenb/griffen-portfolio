@@ -11,7 +11,7 @@ import AboutMe from "./About Me.js";
 import AidI from "./AidI.js";
 import Fallen from "./Fallen.js";
 import Risen from "./Risen.js";
-import Shoply from "./Shoply.js";
+import Poke from "./Poke.js";
 
 const ProjectsContainer = styled.div`
   background: linear-gradient(180deg, #294361 0%, #35597e 100%);
@@ -40,7 +40,7 @@ const Negative = styled.div`
   margin-top: -50px;
 `;
 
-const projects = [<Shoply />, <AidI />, <Risen />, <AboutMe />];
+const projects = [<Poke />, <AidI />, <Risen />, <AboutMe />];
 
 const Projects = () => {
   return (
