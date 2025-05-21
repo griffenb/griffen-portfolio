@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.0e07fd0b.css",
-    "main.js": "/static/js/main.da3e0d4f.js",
+    "main.js": "/static/js/main.2be998a1.js",
     "static/js/453.7ee4d7b8.chunk.js": "/static/js/453.7ee4d7b8.chunk.js",
     "static/media/Risen Site.svg": "/static/media/Risen Site.937d82e087c2e5e4914e649297a8986f.svg",
     "static/media/profile.svg": "/static/media/profile.a061308b97acea00dfaa16c30ab3b356.svg",
     "static/media/pokereese hover.gif": "/static/media/pokereese hover.8e30276b21a45a4878d3.gif",
     "static/media/Poke Screen.svg": "/static/media/Poke Screen.e7b1ee36f85a8bcbe7f3fb7da25d348a.svg",
     "static/media/risen-hover.gif": "/static/media/risen-hover.a873a4b3aa244ae81584.gif",
-    "static/media/pokereese.svg": "/static/media/pokereese.4e7f9a7cfffbb20368967ce107c87f9c.svg",
+    "static/media/pokereese.svg": "/static/media/pokereese.36b8f40dba752292f309197d02ee570f.svg",
     "static/media/Kiosk Group.svg": "/static/media/Kiosk Group.dbd23cc2fb9aef73ddc48badd460e55b.svg",
     "static/media/fallen-hover.svg": "/static/media/fallen-hover.3e3fbb6f47dc5404062ff01bf25cc718.svg",
     "static/media/fallen-star.svg": "/static/media/fallen-star.f922d3dfc8be3df5a2710bf27ab1bc16.svg",
@@ -29,11 +29,11 @@
     "static/media/email icon.svg": "/static/media/email icon.e6edf04476c7c6f83ebccb335657a1b6.svg",
     "static/media/Option Bars.svg": "/static/media/Option Bars.939dc3a72b8564f833280ba651e2a868.svg",
     "main.0e07fd0b.css.map": "/static/css/main.0e07fd0b.css.map",
-    "main.da3e0d4f.js.map": "/static/js/main.da3e0d4f.js.map",
+    "main.2be998a1.js.map": "/static/js/main.2be998a1.js.map",
     "453.7ee4d7b8.chunk.js.map": "/static/js/453.7ee4d7b8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0e07fd0b.css",
-    "static/js/main.da3e0d4f.js"
+    "static/js/main.2be998a1.js"
   ]
 }
